@@ -12,7 +12,7 @@ Esse é o Projeto Integrador feito para o semestre 2025.1 das matérias de Prog 
 
 Integrantes do grupo: 
 
-Marco Antonio Bernardeli da Veiga - 20230002952
+Marco Antonio Bernardeli da Veiga - 20230002952 |
 Fernando Vidmar - 2311100032
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
