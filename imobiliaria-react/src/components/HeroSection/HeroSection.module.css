@@ -1,0 +1,81 @@
+.hero {
+  background-color: #e0f2fe;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-left: 0; 
+  margin-right: 0; 
+  margin-top: 0;  
+  padding: 40px 0;
+}
+
+.heroContent {
+ /* max-width: 1200px;*/
+  margin: 0 auto; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%; 
+  padding: 0 20px; 
+  box-sizing: border-box;
+}
+
+.imageContainer {
+  flex: 1; 
+  padding: 0 0px;
+  min-width: 300px;
+  text-align: center;
+}
+
+.heroImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px; 
+
+}
+
+.textAndFormContainer {
+  flex: 1.5; 
+  min-width: 400px; 
+  padding-left: 40px;
+  box-sizing: border-box; 
+}
+
+.headline {
+  font-size: 2.8em; 
+  color: #2c3e50;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+/* Responsividade básica */
+@media (max-width: 992px) {
+  .heroContent {
+    flex-direction: column; 
+    text-align: center;
+  }
+  .imageContainer {
+    margin-bottom: 30px;
+  }
+  .textAndFormContainer {
+    padding-left: 0;
+    max-width: 90%; 
+  }
+  .headline {
+    font-size: 2em; 
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: calc(100vh - 120px); /* Ajuste para a altura da navbar em mobile, se necessário */
+    padding: 20px 0; /* Reduza o padding vertical em telas menores */
+  }
+  .heroContent {
+    padding: 0 15px;
+  }
+}

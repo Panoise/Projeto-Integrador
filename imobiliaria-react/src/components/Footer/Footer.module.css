@@ -1,0 +1,119 @@
+.footer {
+  background-color: #2c3e50; 
+  color: white;
+  padding: 40px 0 20px 0; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footerSection {
+  flex: 1;
+  min-width: 250px; 
+  margin-bottom: 20px; 
+}
+
+.footerTitle {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #a0c4ff;
+}
+
+.sectionHeading {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  color: #a0c4ff;
+}
+
+.footerText {
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 15px; 
+  margin-top: 20px;
+}
+
+.socialLink {
+  font-size: 1.8em; 
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.socialLink:hover {
+  transform: translateY(-3px); 
+  color: #f39c12;
+}
+
+.footerNavList {
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+}
+
+.footerNavList li {
+  margin-bottom: 10px;
+}
+
+.footerNavLink {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95em;
+  transition: color 0.2s ease;
+}
+
+.footerNavLink:hover {
+  color: #f39c12;
+  text-decoration: underline;
+}
+
+.footerBottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); 
+  font-size: 0.85em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  .footerContent {
+    flex-direction: column; /* Empilha as seções em telas menores */
+    align-items: center; /* Centraliza o conteúdo das seções empilhadas */
+    text-align: center;
+  }
+  .footerSection {
+    min-width: unset; /* Remove largura mínima para seções empilhadas */
+    width: 100%; /* Ocupa largura total */
+    margin-bottom: 30px;
+  }
+  .socialIcons {
+    justify-content: center; /* Centraliza ícones sociais */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 0 15px 0;
+  }
+  .footerTitle, .sectionHeading {
+    font-size: 1.3em;
+  }
+  .footerText, .footerNavLink {
+    font-size: 0.9em;
+  }
+}

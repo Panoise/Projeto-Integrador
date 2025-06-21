@@ -1,0 +1,71 @@
+.propertyListSection {
+  max-width: 1200px; 
+  margin: 40px auto; 
+  padding: 0 20px;
+  box-sizing: border-box;
+
+}
+
+.mainTitle {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 40px;
+  font-size: 1.6em;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.propertyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 20px 0; 
+}
+
+.statusMessage, .errorMessage, .noResults {
+  text-align: center;
+  font-size: 1.2em;
+  color: #666;
+  grid-column: 1 / -1;
+  padding: 50px 0;
+}
+
+.errorMessage {
+  color: #dc3545;
+}
+
+
+/*Responsividade*/
+
+@media (max-width: 992px) { /* Para tablets e telas médias */
+  .propertyGrid {
+    grid-template-columns: repeat(2, 1fr); /* Muda para 2 colunas */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) { /* Para celulares e telas pequenas */
+  .propertyGrid {
+    grid-template-columns: 1fr; /* Muda para 1 coluna */
+    gap: 15px;
+    padding: 15px 0;
+  }
+  .mainTitle {
+    font-size: 2em; /* Diminui a fonte em telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .propertyListSection {
+    padding: 0 15px; /* Ajusta o padding lateral para telas muito pequenas */
+    margin: 30px auto; /* Ajusta a margem vertical para telas muito pequenas */
+  }
+  .mainTitle {
+    font-size: 1.8em;
+  }
+}

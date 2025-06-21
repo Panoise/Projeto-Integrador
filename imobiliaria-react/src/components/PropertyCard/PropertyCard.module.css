@@ -1,0 +1,68 @@
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.info {
+  padding: 15px;
+  flex-grow: 1; /* Garante que o info ocupe o espaço restante */
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 1.3em;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.location {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.price {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.details {
+  display: flex;
+  gap: 15px;
+  font-size: 0.85em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 0.9em;
+  color: #777;
+  line-height: 1.5;
+  margin-top: auto; /* Empurra a descrição para o final, útil se cards tiverem alturas variadas */
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+  }
+}
