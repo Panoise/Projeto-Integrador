@@ -1,0 +1,588 @@
+type: collection.insomnia.rest/5.0
+name: CRUD Imobiliária
+meta:
+  id: wrk_c17c193bee3343169ba00d9d8eb34f55
+  created: 1751760078153
+  modified: 1751842392528
+  description: ""
+collection:
+  - url: http://localhost:8080/api/proprietarios
+    name: Listar Proprietarios
+    meta:
+      id: req_4535986c77eb498a900bbd5ad26316f5
+      created: 1751760078219
+      modified: 1751843627376
+      isPrivate: false
+      description: ""
+      sortKey: -1751760078219
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/proprietarios/5
+    name: Criar Proprietario
+    meta:
+      id: req_8ccf7fb2d6a044adab81915f7bab761a
+      created: 1751760178856
+      modified: 1751843408610
+      isPrivate: false
+      description: ""
+      sortKey: -1751760178856
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "cpf": "111.443.739-10",
+        	"nome": "Lorenzo Mokwa",
+        	"nacionalidade": "Brasileiro",
+        	"rg": "12345-78",
+        	"orgaoExpedidor": "SPP/SC",
+        	"dataExpedicaoRg": "24/10/2013",
+        	"naturalidade": "Curitiba - PR",
+        	"nomePai": "Tio",
+        	"nomeMae": "Tia ",
+        	"dataNascimento": "08/06/2004",
+        	"sexo": "NIF",
+        	"estadoCivil": "solteiro",
+        	"observacao": "Cheira peidokkkkk",
+        	"email": "lorenzomowka@gmail.com",
+        	"telefone": "4999999999",
+        	
+        	"endereco": {
+                "rua": "Rua dos Bobos",
+                "numero": "1001",
+                "cep": "89803-058",
+                "complemento": "Apartamento 202"
+            }
+        	
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/proprietarios/"colocar o id que deseja deletar"
+    name: Apagar Proprietario
+    meta:
+      id: req_601da2371ded4647b980bd703c4a252a
+      created: 1751762668759
+      modified: 1751842403484
+      isPrivate: false
+      description: ""
+      sortKey: -1751762668759
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/proprietarios/"colocar o id que deseja atualizar"
+    name: Atualizar Proprietario
+    meta:
+      id: req_e0fcb83c8cc04958bc39e94ebd0bbb68
+      created: 1751763623502
+      modified: 1751841549190
+      isPrivate: false
+      description: ""
+      sortKey: -1751763623502
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+
+        	"dataNascimento": "08/06/2004",
+        	"sexo": "Queer",
+        	"estadoCivil": "biado",
+
+        	"observacao": "cheira peido de hobbie"
+        	
+
+        	
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/bairros
+    name: Listar Bairros
+    meta:
+      id: req_f0fb9f35890d429aa4c944c8dfd9792e
+      created: 1751840200272
+      modified: 1751841088843
+      isPrivate: false
+      description: ""
+      sortKey: -1751840200272
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/bairros
+    name: Criar Bairro
+    meta:
+      id: req_8ec39295d024436a82ff01e6b77de2a7
+      created: 1751840912057
+      modified: 1751841111459
+      isPrivate: false
+      description: ""
+      sortKey: -1751840912057
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome": "Jardim Itália"
+        	
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/bairros/"colocar o id que deseja deletar"
+    name: Apagar Bairro
+    meta:
+      id: req_8b25dcdd384c4ac9bfbca7a99ea44e73
+      created: 1751841136243
+      modified: 1751841214127
+      isPrivate: false
+      description: ""
+      sortKey: -1751841136243
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/bairros/"colocar o id que deseja atualizar"
+    name: Atualizar Bairro
+    meta:
+      id: req_d5184c3a2cce460e96ab31b60388726c
+      created: 1751841264673
+      modified: 1751841554141
+      isPrivate: false
+      description: ""
+      sortKey: -1751841264673
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	
+        	"nome": "Desbravador"
+        	
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/caracteristicas
+    name: Listar Características
+    meta:
+      id: req_f71a0e2060b7470f8acd34da0a69175e
+      created: 1751841359160
+      modified: 1751841386621
+      isPrivate: false
+      description: ""
+      sortKey: -1751841359160
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/caracteristicas
+    name: "Adicionar Característica "
+    meta:
+      id: req_8ab5aa3118cf43548845918353739130
+      created: 1751841389900
+      modified: 1751841938685
+      isPrivate: false
+      description: ""
+      sortKey: -1751841389900
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	
+        	"nome": "Porteiro"
+        	
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/caracteristicas/"colocar o id que deseja deletar"
+    name: Deletar Característica
+    meta:
+      id: req_2a023f13c6624fd9be26698df3e572a7
+      created: 1751841393939
+      modified: 1751841966801
+      isPrivate: false
+      description: ""
+      sortKey: -1751841393939
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/caracteristicas/"colocar o id que deseja
+      atualizar"
+    name: "Atualizar Característica "
+    meta:
+      id: req_35ef6f4db7464513b79a25c99094d903
+      created: 1751841397811
+      modified: 1751842056375
+      isPrivate: false
+      description: ""
+      sortKey: -1751841397811
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	
+        	"nome": "M³"
+        	
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/categorias
+    name: "Listar Categorias "
+    meta:
+      id: req_83359b00b25a4ce08a469a3678e98b87
+      created: 1751842078452
+      modified: 1751842148999
+      isPrivate: false
+      description: ""
+      sortKey: -1751842078452
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/categorias
+    name: Adicionar Categorias
+    meta:
+      id: req_30ce619b3a1546adb0bd064f8a058c23
+      created: 1751842116558
+      modified: 1751842279548
+      isPrivate: false
+      description: ""
+      sortKey: -1751842116558
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	
+        	"nome": "Sala Comercial"
+        	
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/categorias/"colocar o id que deseja deletar"
+    name: Deletar Categorias
+    meta:
+      id: req_a52f21632ee743969ffcd4a939bb12e7
+      created: 1751842118968
+      modified: 1751842292385
+      isPrivate: false
+      description: ""
+      sortKey: -1751842118968
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/categorias/"colocar o id que deseja atualizar"
+    name: Atualizar Categorias
+    meta:
+      id: req_96bce03bf73146bcb52b75ef9b2921ee
+      created: 1751842121453
+      modified: 1751842347053
+      isPrivate: false
+      description: ""
+      sortKey: -1751842121453
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	
+        	"nome": "Apartamento"
+        	
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/imoveis
+    name: Listar Imoveis
+    meta:
+      id: req_47d4a4b0a1c64761922f03b8a052a454
+      created: 1751843058403
+      modified: 1751843127805
+      isPrivate: false
+      description: ""
+      sortKey: -1751843058403
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/imoveis
+    name: Criar Imovel
+    meta:
+      id: req_38bfc5efab4f43e8a911f89ca448ca71
+      created: 1751843060198
+      modified: 1751843706421
+      isPrivate: false
+      description: ""
+      sortKey: -1751843060198
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "tipoFinalidade": "Venda",
+            "valorVenda": "R$ 1.700.000,00",
+            "status": "Disponível",
+            
+            "proprietario": {
+                "id": 5
+            },
+            
+            "endereco": {
+                "rua": "Rua dos Bobos",
+                "numero": "1221",
+                "cep": "89203-058",
+                "complemento": "Terreno"
+            }
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    scripts:
+      preRequest: |-
+        {
+        	
+        	
+        	
+        	
+        }
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/imoveis/"colocar o id que deseja deletar"
+    name: Deletar Imovel
+    meta:
+      id: req_9675004e9401403c9828896ef3399c21
+      created: 1751843061625
+      modified: 1751844932182
+      isPrivate: false
+      description: ""
+      sortKey: -1751843061625
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/imoveis/"colocar o id que deseja atualizar"
+    name: Atualizar Imovel
+    meta:
+      id: req_799dd7ffcdc54b16bb35fd6dc34225bb
+      created: 1751843063407
+      modified: 1751846114827
+      isPrivate: false
+      description: ""
+      sortKey: -1751843063407
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |
+        
+
+        {
+        	
+        "tipoFinalidade": "Aluguel"	
+        	
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_e91a2c5e1d32ffa3b700af69c07737deaee3b47a
+    created: 1751760078158
+    modified: 1751843708220
+environments:
+  name: Base Environment
+  meta:
+    id: env_e91a2c5e1d32ffa3b700af69c07737deaee3b47a
+    created: 1751760078156
+    modified: 1751843708222
+    isPrivate: false
