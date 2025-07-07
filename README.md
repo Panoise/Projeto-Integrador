@@ -34,8 +34,8 @@ Essa pasta contém todos os modelos do banco de dados.
 
 - Java (JDK 24 ou superior)
 - Maven
-- PostgreSQL (servidor de banco de dados)
-- Insomnia (ou Postman) para testar a API
+- PostgreSQL 
+- Insomnia 
 
 ## Passos para Configuração e Execução
 
@@ -44,7 +44,7 @@ Essa pasta contém todos os modelos do banco de dados.
 Este projeto requer uma base de dados PostgreSQL. Um backup com a estrutura e dados de exemplo (`imobiliaria_backup.backup`) está incluído.
 
 **a) Crie um novo Banco de Dados Vazio:**
-   - Abra o pgAdmin (ou outra ferramenta).
+   - Abra o pgAdmin 
    - Crie uma nova base de dados. Você pode chamá-la de `imobiliaria_db` ou qualquer outro nome.
 
 **b) Restaure o Backup:**
@@ -59,9 +59,9 @@ Após a restauração, todas as tabelas e dados de exemplo estarão no seu banco
 
 ### 2. Importar o CRUD pro Insomnia 
 
-**a) Clique em Import no Insomnia 
+** a) Clique em Import no Insomnia 
 
-**b) Selecione o arquivo `CRUD_imobiliaria_insomnia`
+** b) Selecione o arquivo `CRUD_imobiliaria_insomnia`
 
 ### 3. Executar o Projeto
 
