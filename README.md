@@ -28,7 +28,7 @@ Essa pasta contém todos os modelos do banco de dados.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#Back-end do sistema de gestão imobiliária, desenvolvido com Spring Boot e PostgreSQL.
+# Back-end 
 
 ## Pré-requisitos
 
@@ -57,15 +57,16 @@ Este projeto requer uma base de dados PostgreSQL. Um backup com a estrutura e da
 
 Após a restauração, todas as tabelas e dados de exemplo estarão no seu banco de dados.
 
-### 2. Configurar a Aplicação
+### 2. Importar o CRUD pro Insomnia 
 
-- Abra o arquivo `src/main/resources/application.properties`.
-- Verifique se a linha `spring.datasource.url` aponta para o nome do banco de dados que você criou no passo anterior.
-- Verifique se `spring.datasource.username` e `spring.datasource.password` correspondem às suas credenciais do PostgreSQL.
+**a) Clique em Import no Insomnia 
+
+**b) Selecione o arquivo `CRUD_imobiliaria_insomnia`
 
 ### 3. Executar o Projeto
 
-- Abra um terminal na pasta raiz do projeto.
-- Execute o seguinte comando Maven:
-  ```bash
-  mvn spring-boot:run
+-- Navegue até Imobiliaria\src\main\java\com\uffs\imobiliaria
+
+-- Execute o `ImobiliariaApplication`
+
+-- Se todos os passos anteriores foram executados corretamente, vai estar funcionando. 
