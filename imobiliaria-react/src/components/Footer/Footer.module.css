@@ -55,7 +55,7 @@
 
 .socialLink:hover {
   transform: translateY(-3px); 
-  color: #f39c12;
+  color: #a0c4ff;
 }
 
 .footerNavList {
@@ -76,7 +76,7 @@
 }
 
 .footerNavLink:hover {
-  color: #f39c12;
+  color: #a0c4ff;
   text-decoration: underline;
 }
 

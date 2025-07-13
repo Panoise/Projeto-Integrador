@@ -40,30 +40,29 @@
 }
 
 
-/*Responsividade*/
 
-@media (max-width: 992px) { /* Para tablets e telas médias */
+@media (max-width: 992px) { 
   .propertyGrid {
-    grid-template-columns: repeat(2, 1fr); /* Muda para 2 colunas */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 20px;
   }
 }
 
-@media (max-width: 600px) { /* Para celulares e telas pequenas */
+@media (max-width: 600px) { 
   .propertyGrid {
-    grid-template-columns: 1fr; /* Muda para 1 coluna */
+    grid-template-columns: 1fr; 
     gap: 15px;
     padding: 15px 0;
   }
   .mainTitle {
-    font-size: 2em; /* Diminui a fonte em telas menores */
+    font-size: 2em; 
   }
 }
 
 @media (max-width: 480px) {
   .propertyListSection {
-    padding: 0 15px; /* Ajusta o padding lateral para telas muito pequenas */
-    margin: 30px auto; /* Ajusta a margem vertical para telas muito pequenas */
+    padding: 0 15px; 
+    margin: 30px auto; 
   }
   .mainTitle {
     font-size: 1.8em;

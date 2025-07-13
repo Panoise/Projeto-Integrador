@@ -1,63 +1,57 @@
-// src/components/Navbar/Navbar.jsx
-import React from "react";
-import styles from "./Navbar.module.css";
-import logoImage from "../../assets/images/logoMini.png";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import styles from './Navbar.module.css';
+import logoImage from '../../assets/images/logo.png'; 
 
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
 
-  const handleCreateAccountClick = () => {
-    alert("Funcionalidade em desenvolvimento!")
-  };
-  const handleLoginClick = () => {
-    alert("Funcionalidade em desenvolvimento!")
-  };
+    const toggleMenu = () => {
+        setIsOpen(!isOpen); 
+    };
 
-  return (
-      <nav className={styles.navbar}>
-      <div className={styles.logo}>
-        <a href="/" className={styles.logoLink}>
-          <img src={logoImage} alt="Logo da Imobiliária" className={styles.logoImg} />
-        </a>
-      </div>
-      <ul className={styles.navList}>
-        <li className={styles.navItem}>
-          <a href="/" className={styles.navLink}>Alugar</a>
-        </li>
-        <li className={styles.navItem}>
-          <a href="/imoveis" className={styles.navLink}>Comprar</a> 
-        </li>
-        <li className={styles.navItem}>
-          <a href="/sobre" className={styles.navLink}>Lançamentos</a> 
-        </li>
-        <li className={styles.navItem}>
-          <a href="/contato" className={styles.navLink}>Descobrir</a> 
-        </li>
-                <li className={styles.navItem}>
-          <a href="/contato" className={styles.navLink}>Anunciar</a>
-        </li>
-                <li className={styles.navItem}>
-          <a href="/contato" className={styles.navLink}>Sobre</a> 
-        </li>
-      </ul>
-      <div className={styles.authButtonsContainer}> {/* Contêiner para os botões */}
-          {/* Botão "Criar conta" - preenchido */}
-          <button
-            className={`${styles.button} ${styles.primaryButton}`}
-            onClick={handleCreateAccountClick}
-          >
-            Criar conta
-          </button>
+    return (
+        <nav className={styles.navbar}>
+            <div className={styles.logo}>
+                <Link to="/" className={styles.logoLink}>
+                    <img src={logoImage} alt="Logo da Imobiliária" className={styles.logoImg} />
+                </Link>
+            </div>
 
-          {/* Botão "Entrar" - contornado com ícone */}
-          <button
-            className={`${styles.button} ${styles.secondaryButton}`}
-            onClick={handleLoginClick}
-          >
-            <span className={styles.iconPlaceholder}>👤</span> Entrar
-          </button>
-        </div>
-    </nav>
-  );
+            <button
+                className={`${styles.hamburgerMenu} ${isOpen ? styles.open : ''}`}
+                onClick={toggleMenu}
+                aria-label="Abrir Menu"
+            >
+                <div className={styles.bar1}></div>
+                <div className={styles.bar2}></div>
+                <div className={styles.bar3}></div>
+            </button>
+
+            <div className={`${styles.navAndAuth} ${isOpen ? styles.open : ''}`}>
+                <ul className={styles.navList}>
+                    <li className={styles.navItem}>
+                        <Link to="/" className={styles.navLink} onClick={toggleMenu}>Início</Link>
+                    </li>
+                    <li className={styles.navItem}>
+                        <Link to="/" className={styles.navLink} onClick={toggleMenu}>Imóveis</Link>
+                    </li>
+                    <li className={styles.navItem}>
+                        <Link to="/" className={styles.navLink} onClick={toggleMenu}>Sobre</Link>
+                    </li>
+                    <li className={styles.navItem}>
+                        <Link to="/" className={styles.navLink} onClick={toggleMenu}>Contato</Link>
+                    </li>
+                </ul>
+
+                <div className={styles.authButtonsContainer}>
+                    <Link to="/login" className={`${styles.button} ${styles.primaryButton}`} onClick={toggleMenu}>
+                        Entrar
+                    </Link>
+                </div>
+            </div>
+        </nav>
+    );
 };
 
 export default Navbar;

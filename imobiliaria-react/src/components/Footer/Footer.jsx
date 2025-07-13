@@ -7,31 +7,19 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <div className={styles.footerSection}>
-          <h3 className={styles.footerTitle}>Minha Casa Imóveis</h3>{/*Colocar o PNG da logo aqui*/}
+          <h3 className={styles.footerTitle}>Minha Casa Imóveis</h3>
           <p className={styles.footerText}>
             Encontrando o lar dos seus sonhos em Chapecó e região.
           </p>
-          <div className={styles.socialIcons}>
-
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-              <span role="img" aria-label="Facebook">{/*Falta colocar o ícone das redes sociais*/}</span>
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-              <span role="img" aria-label="Instagram">{/*Falta colocar o ícone das redes sociais*/}</span>
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-              <span role="img" aria-label="LinkedIn">{/*Falta colocar o ícone das redes sociais*/}</span>
-            </a>
-          </div>
         </div>
 
         <div className={styles.footerSection}>
           <h4 className={styles.sectionHeading}>Links Úteis</h4>
           <ul className={styles.footerNavList}>
-            <li><a href="/imoveis" className={styles.footerNavLink}>Imóveis</a></li>
-            <li><a href="/sobre" className={styles.footerNavLink}>Sobre Nós</a></li>
-            <li><a href="/contato" className={styles.footerNavLink}>Contato</a></li>
-            <li><a href="/politica-de-privacidade" className={styles.footerNavLink}>Política de Privacidade</a></li>
+            <li><a href="/" className={styles.footerNavLink}>Imóveis</a></li>
+            <li><a href="/" className={styles.footerNavLink}>Sobre</a></li>
+            <li><a href="/" className={styles.footerNavLink}>Contato</a></li>
+            <li><a href="/" className={styles.footerNavLink}>Política de Privacidade</a></li>
           </ul>
         </div>
 
@@ -47,7 +35,7 @@ const Footer = () => {
       </div>
 
       <div className={styles.footerBottom}>
-        <p>&copy; {new Date().getFullYear()} Minha Casa Imóveis. Todos os direitos reservados.</p>
+        <p>&copy; {new Date().getFullYear()} Minha Casa Imóveis - Todos os direitos reservados.</p>
       </div>
     </footer>
   );

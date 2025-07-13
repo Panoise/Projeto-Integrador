@@ -1,0 +1,44 @@
+.managementPageWrapper {
+  padding-top: 0; 
+  background-color: #ffffff; 
+  min-height: 100vh;
+  box-sizing: border-box; 
+
+  display: flex; 
+  flex-direction: column; 
+  width: 100%;
+}
+
+.managementContainer {
+  display: flex; 
+  flex-direction: row; 
+  width: 100%; 
+  flex-grow: 1; 
+  box-sizing: border-box;
+}
+
+.managementContentArea {
+  flex-grow: 1; 
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ffffff; 
+  border-left: 1px solid #eee; 
+}
+
+@media (max-width: 992px) {
+  .managementContainer {
+    flex-direction: column; 
+    padding: 0 15px; 
+  }
+  .managementContentArea {
+    border-left: none;
+    border-top: 1px solid #eee; 
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .managementContainer {
+    padding: 0 10px; 
+  }
+}

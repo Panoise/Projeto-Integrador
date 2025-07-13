@@ -22,7 +22,7 @@
 
 .info {
   padding: 15px;
-  flex-grow: 1; /* Garante que o info ocupe o espaço restante */
+  flex-grow: 1; 
   display: flex;
   flex-direction: column;
 }
@@ -58,7 +58,7 @@
   font-size: 0.9em;
   color: #777;
   line-height: 1.5;
-  margin-top: auto; /* Empurra a descrição para o final, útil se cards tiverem alturas variadas */
+  margin-top: auto; 
 }
 
 @media (max-width: 768px) {

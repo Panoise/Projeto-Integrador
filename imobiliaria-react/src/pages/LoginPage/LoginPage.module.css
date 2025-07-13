@@ -1,0 +1,96 @@
+/* src/pages/LoginPage/LoginPage.module.css */
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;  /*Ajusta para a altura da Navbar */
+  background-color: #f0f2f5; /* Fundo suave */
+  padding-top: 0px;/* Para não ficar atrás da Navbar */
+  box-sizing: border-box;
+}
+
+.loginBox {
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; /* Largura máxima da caixa de login */
+  text-align: center;
+}
+
+.loginTitle {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: bold;
+}
+
+.inputField {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  box-sizing: border-box; /* Garante que padding e borda sejam incluídos na largura */
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.loginButton {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.loginButton:hover {
+  background-color: #0056b3;
+}
+
+.forgotPassword {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .loginBox {
+    margin: 20px;
+    padding: 30px;
+  }
+  .loginTitle {
+    font-size: 1.8em;
+  }
+  .loginButton {
+    padding: 10px 15px;
+    font-size: 1em;
+  }
+}

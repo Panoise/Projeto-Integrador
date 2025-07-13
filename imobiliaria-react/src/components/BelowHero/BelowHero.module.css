@@ -1,18 +1,17 @@
-/* src/components/BelowHero/BelowHero.module.css */
-.belowSection { /* <-- Corresponde a className={styles.belowSection} */
+.belowSection {
     background-color: #f8f8f8;
     padding: 30px 0;
     text-align: center;
 }
 
-.belowContent { /* <-- Corresponde a className={styles.belowContent} */
+.belowContent { 
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
 }
 
-.sectionTitle { /* <-- Corresponde a className={styles.sectionTitle} */
+.sectionTitle { 
     font-size: 1.5em;
     color: #2c3e50;
     margin-bottom: 15px;
@@ -21,21 +20,21 @@
    /* text-transform: uppercase;*/
 }
 
-.sectionDivider { /* Linha horizontal */
+.sectionDivider { 
     width: 120px;
     height: 3px;
     background-color: #007bff;
     margin: 0 auto 50px auto;
 }
 
-.itemsGrid { /* <-- Corresponde a className={styles.itemsGrid} */
+.itemsGrid { 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     margin-bottom: 60px;
 }
 
-.itemCard { /* Estilo para cada cartão individual */
+.itemCard { 
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -51,30 +50,30 @@
     transform: translateY(-5px);
 }
 
-.itemIcon { /* Estilo para o ícone/emoji */
+.itemIcon { 
     font-size: 3em;
     margin-bottom: 15px;
     color: #007bff;
 }
 
-.itemTitle { /* Estilo para o título do item */
+.itemTitle { 
     font-size: 1.3em;
     color: #333;
     margin-bottom: 10px;
     font-weight: 600;
 }
 
-.itemDescription { /* Estilo para a descrição do item */
+.itemDescription { 
     font-size: 0.95em;
     color: #666;
     line-height: 1.5;
 }
 
-.fullWidthImageContainer { /* Contêiner para a imagem maior abaixo */
+.fullWidthImageContainer { 
     margin-top: 40px;
 }
 
-.fullWidthImage { /* Estilo para a imagem maior */
+.fullWidthImage {
     width: 100%;
     height: auto;
     border-radius: 15px;
@@ -82,7 +81,7 @@
     display: block;
 }
 
-/* --- Responsividade --- */
+/*Responsividade*/
 @media (max-width: 992px) {
     .itemsGrid {
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
