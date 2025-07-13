@@ -1,0 +1,412 @@
+.formContainer {
+    background-color: #f7f7f7;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.formHeader {
+    background-color: #e0f2fe;
+    padding: 10px 15px;
+    margin: -20px -20px 20px -20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.sectionTitle {
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+}
+
+.subSectionTitle {
+    font-size: 1.1em;
+    color: #444;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    grid-column: span 2;
+    margin-top: 25px;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 15px 25px;
+}
+
+.formGroup {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.formGroup label {
+    flex-basis: 150px;
+    font-size: 0.95em;
+    color: #555;
+    text-align: right;
+    padding-right: 15px;
+    flex-shrink: 0;
+    padding-top: 8px;
+}
+
+.textInput, .selectInput {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #333;
+    line-height: 1.5;
+    box-sizing: border-box;
+    height: 40px;
+    min-width: 0;
+}
+
+.textArea {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #333;
+    line-height: 1.5;
+    box-sizing: border-box;
+    resize: vertical;
+    min-height: 80px;
+    min-width: 0;
+}
+
+.textInput:focus, .selectInput:focus, .textArea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.inputShort {
+    max-width: 150px;
+    flex-grow: 0;
+}
+
+.inputWithButton {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    gap: 5px;
+    min-width: 0;
+}
+
+.inputWithButton .textInput {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.searchIconButton {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    color: #555;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    flex-shrink: 0;
+    height: 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchIconButton:hover {
+    background-color: #e0e0e0;
+    color: #007bff;
+}
+
+.searchIcon {
+    position: absolute;
+    right: 10px;
+    color: #888;
+    cursor: pointer;
+    font-size: 1.1em;
+    padding: 5px;
+}
+
+.searchIcon:hover {
+    color: #007bff;
+}
+
+.formGroup:has(textarea) {
+    grid-column: span 2;
+}
+
+.characteristicsSection {
+    grid-column: span 2;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.characteristicsLabel {
+    flex-basis: 150px;
+    font-size: 0.95em;
+    color: #555;
+    text-align: right;
+    padding-right: 15px;
+    flex-shrink: 0;
+    align-self: flex-start;
+    padding-top: 8px;
+}
+
+.characteristicsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    flex-grow: 1;
+    padding-top: 0;
+    width: 100%;
+}
+
+.checkboxOption {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    color: #333;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.checkboxInput {
+    margin-right: 8px;
+    transform: scale(1.1);
+}
+
+.formActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    grid-column: span 2;
+}
+
+.button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+.deleteButton {
+    background-color: #dc3545;
+    color: white;
+    border: 1px solid #dc3545;
+}
+
+.deleteButton:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.clearButton {
+    background-color: #f0f0f0;
+    color: #555;
+    border: 1px solid #ccc;
+}
+
+.clearButton:hover {
+    background-color: #e0e0e0;
+}
+
+.submitButton {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+
+.submitButton:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 992px) {
+    .formContainer {
+        padding: 15px;
+        margin: 15px auto;
+    }
+    .formHeader {
+        margin: -15px -15px 15px -15px;
+    }
+    .sectionTitle {
+        font-size: 1.4em;
+    }
+    .subSectionTitle {
+        font-size: 1em;
+    }
+    .formGrid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 15px;
+    }
+    .formGroup label {
+        flex-basis: 120px;
+        font-size: 0.9em;
+        padding-top: 6px;
+    }
+    .textInput, .selectInput, .textArea, .button, .searchIconButton {
+        font-size: 0.95em;
+        height: 38px;
+        padding: 7px 10px;
+    }
+    .textArea {
+        min-height: 70px;
+    }
+    .searchIconButton {
+        width: auto;
+        min-width: 38px;
+        font-size: 1em;
+        padding: 7px 10px;
+    }
+    .characteristicsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 8px;
+    }
+    .checkboxOption {
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 768px) {
+    .formContainer {
+        padding: 15px;
+        margin: 15px;
+    }
+    .formHeader {
+        margin: -15px -15px 15px -15px;
+    }
+    .sectionTitle {
+        font-size: 1.3em;
+    }
+    .subSectionTitle {
+        grid-column: span 1;
+    }
+    .formGrid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .formGroup {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .formGroup label {
+        text-align: left;
+        padding-right: 0;
+        margin-bottom: 0;
+        width: 100%;
+        flex-basis: auto;
+    }
+    .textInput, .selectInput, .textArea, .searchIconButton {
+        width: 100%;
+        max-width: unset;
+        font-size: 0.9em;
+        height: 36px;
+        padding: 6px 10px;
+    }
+    .textArea {
+        min-height: 60px;
+    }
+    .inputShort {
+        max-width: 100%;
+    }
+    .inputWithButton {
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+    }
+    .inputWithButton .textInput {
+        width: 100%;
+        min-width: unset;
+    }
+    .inputWithButton .searchIconButton {
+        width: 100%;
+        height: 36px;
+        font-size: 0.9em;
+        padding: 6px 10px;
+    }
+    .characteristicsSection {
+        grid-column: span 1;
+        margin-top: 15px;
+        padding-top: 10px;
+    }
+    .characteristicsLabel {
+        text-align: left;
+        flex-basis: auto;
+        padding-top: 0;
+        margin-bottom: 5px;
+    }
+    .characteristicsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 5px;
+    }
+    .checkboxOption {
+        font-size: 0.8em;
+    }
+    .formActions {
+        flex-direction: column;
+        gap: 10px;
+        grid-column: span 1;
+    }
+    .button {
+        width: 100%;
+        height: 38px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .formContainer {
+        padding: 10px;
+        margin: 10px;
+    }
+    .formHeader {
+        margin: -10px -10px 10px -10px;
+    }
+    .sectionTitle {
+        font-size: 1.2em;
+    }
+    .textInput, .selectInput, .textArea, .button, .searchIconButton {
+        font-size: 0.85em;
+        padding: 5px 8px;
+        height: 34px;
+    }
+    .textArea {
+        min-height: 50px;
+    }
+    .searchIconButton {
+        height: 34px;
+    }
+    .characteristicsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    }
+    .checkboxOption {
+        font-size: 0.75em;
+    }
+}
