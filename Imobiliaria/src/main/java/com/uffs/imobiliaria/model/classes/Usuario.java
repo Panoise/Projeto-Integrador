@@ -1,19 +1,49 @@
 package com.uffs.imobiliaria.model.classes;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+
 public class Usuario {
 
-    private Long ID;
+    //ID único.
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+
     private String nome;
     private String email;
     private String senha;
     private String perfil;
 
-    public Long getID() {
-        return ID;
+
+    //Construtor vazio pro JPA.
+    public Usuario(){
     }
 
-    public void setID(Long ID) {
-        this.ID = ID;
+    //Construtor padrão.
+    public Usuario(String nome, Long id, String email, String senha, String perfil) {
+        this.nome = nome;
+        this.id = id;
+        this.email = email;
+        this.senha = senha;
+        this.perfil = perfil;
+    }
+
+
+    //Getters e Setters.
+
+    public Long getid() {
+        return id;
+    }
+
+    public void setid(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -45,15 +75,6 @@ public class Usuario {
     }
 
     public void setPerfil(String perfil) {
-        this.perfil = perfil;
-    }
-
-
-    public Usuario(Long ID, String nome, String email, String senha, String perfil) {
-        this.ID = ID;
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
         this.perfil = perfil;
     }
 

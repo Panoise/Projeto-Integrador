@@ -1,6 +1,5 @@
 package com.uffs.imobiliaria.controller;
 
-
 import com.uffs.imobiliaria.dto.ImovelDTO;
 import com.uffs.imobiliaria.model.classes.Imovel;
 import com.uffs.imobiliaria.service.ImovelService;
@@ -10,35 +9,20 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/imoveis")
+@RequestMapping("/api/imoveis") // A rota base para imóveis
 public class ImovelController {
 
     @Autowired
-    private ImovelService imovelService;
+    private ImovelService imovelService; // A instância injetada pelo Spring
 
-
-    @PostMapping
-    public ResponseEntity<Imovel> createImovel(@RequestBody Imovel imovel) {
-        try {
-            Imovel novoImovel = imovelService.save(imovel);
-
-            return new ResponseEntity<>(novoImovel, HttpStatus.CREATED);
-        } catch (Exception e) {
-
-            return ResponseEntity.badRequest().build();
-        }
-    }
-
-
+    // --- ENDPOINTS DE LEITURA (READ) ---
     @GetMapping
     public ResponseEntity<List<ImovelDTO>> getAllImoveis() {
-        List<ImovelDTO> imoveisDTO = imovelService.findAll();
-        return ResponseEntity.ok(imoveisDTO);
+        List<ImovelDTO> imoveis = imovelService.findAll();
+        return ResponseEntity.ok(imoveis);
     }
-
 
     @GetMapping("/{id}")
     public ResponseEntity<ImovelDTO> getImovelById(@PathVariable Long id) {
@@ -47,7 +31,24 @@ public class ImovelController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/por-proprietario/{proprietarioId}")
+    public ResponseEntity<List<ImovelDTO>> getImoveisByProprietario(@PathVariable Long proprietarioId) {
+        List<ImovelDTO> imoveis = imovelService.findByProprietarioId(proprietarioId);
+        if (imoveis.isEmpty()) {
+            return ResponseEntity.noContent().build(); // Retorna 204 se não houver imóveis
+        }
+        return ResponseEntity.ok(imoveis);
+    }
 
+    // --- ENDPOINT DE CRIAÇÃO (CREATE) ---
+    @PostMapping
+    public ResponseEntity<Imovel> createImovel(@RequestBody Imovel imovel) {
+        // O frontend envia um Imovel, e o serviço lida com a lógica de salvar
+        Imovel novoImovel = imovelService.save(imovel);
+        return new ResponseEntity<>(novoImovel, HttpStatus.CREATED);
+    }
+
+    // --- ENDPOINT DE ATUALIZAÇÃO COMPLETA (UPDATE - PUT) ---
     @PutMapping("/{id}")
     public ResponseEntity<ImovelDTO> updateImovel(@PathVariable Long id, @RequestBody Imovel imovelDetails) {
         return imovelService.update(id, imovelDetails)
@@ -55,21 +56,28 @@ public class ImovelController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteImovel(@PathVariable Long id) {
-        if (imovelService.existsById(id)) {
-            imovelService.deleteById(id);
-            return ResponseEntity.noContent().build();
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
-
-
+    // --- ENDPOINT DE ATUALIZAÇÃO PARCIAL (PATCH) ---
     @PatchMapping("/{id}")
     public ResponseEntity<ImovelDTO> patchImovel(@PathVariable Long id, @RequestBody Imovel imovelDetails) {
+        // CORREÇÃO: Chamando o método 'patch' a partir da instância 'imovelService'
         return imovelService.patch(id, imovelDetails)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+    // --- ENDPOINT DE DELEÇÃO (DELETE) ---
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteImovel(@PathVariable Long id) {
+        // CORREÇÃO: Chamando o método 'existsById' a partir da instância 'imovelService'
+        if (imovelService.existsById(id)) {
+            imovelService.deleteById(id);
+            return ResponseEntity.noContent().build(); // Retorna 204 No Content
+        } else {
+            return ResponseEntity.notFound().build(); // Retorna 404 Not Found
+        }
+    }
+
+
+
+
 }

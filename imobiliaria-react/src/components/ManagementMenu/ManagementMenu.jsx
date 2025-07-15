@@ -1,53 +1,83 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; 
+import { Link } from 'react-router-dom'; 
 import styles from './ManagementMenu.module.css';
 
 const ManagementMenu = () => {
+  const [isImovelOpen, setIsImovelOpen] = useState(false);
   const [isCadastroOpen, setIsCadastroOpen] = useState(false);
-  const navigate = useNavigate(); 
 
-  const handleHomeClick = () => {
-    navigate('/gerenciamento'); 
-    setIsCadastroOpen(false); 
+  const handleLinkClick = () => {
+    setIsImovelOpen(false);
+    setIsCadastroOpen(false);
   };
 
   return (
     <nav className={styles.managementMenu}>
       <ul className={styles.mainMenu}>
         <li className={styles.menuItem}>
-          <Link to="/gerenciamento" className={styles.menuLink} onClick={handleHomeClick}>Home</Link>
+          <Link to="/gerenciamento" className={styles.menuLink} onClick={handleLinkClick}>Home</Link>
         </li>
 
         <li className={styles.menuItem}>
-          <a onClick={() => setIsCadastroOpen(!isCadastroOpen)} className={styles.menuLink}>
-            Cadastro {isCadastroOpen ? '▲' : '▼'}
+          <a onClick={() => setIsImovelOpen(!isImovelOpen)} className={styles.menuLink}>
+            Imóveis {isImovelOpen ? '▲' : '▼'}
           </a>
-          {isCadastroOpen && (
+          {isImovelOpen && (
             <ul className={styles.subMenu}>
               <li className={styles.subMenuItem}>
-                <Link to="/gerenciamento/imovel" className={styles.menuLink} onClick={() => setIsCadastroOpen(false)}>Cadastro de Imóvel</Link>
+                <Link to="/gerenciamento/imoveis" className={styles.menuLink} onClick={handleLinkClick}>
+                  Listar Imóveis
+                </Link>
               </li>
               <li className={styles.subMenuItem}>
-                <Link to="/gerenciamento/proprietario" className={styles.menuLink} onClick={() => setIsCadastroOpen(false)}>Cadastro de Proprietário</Link>
+                <Link to="/gerenciamento/imovel/cadastro" className={styles.menuLink} onClick={handleLinkClick}>
+                  Cadastrar Imóvel
+                </Link>
               </li>
             </ul>
           )}
         </li>
 
         <li className={styles.menuItem}>
-          <Link to="/gerenciamento/imovel" className={styles.menuLink}>Imóvel</Link>
+          <a onClick={() => setIsCadastroOpen(!isCadastroOpen)} className={styles.menuLink}>
+            Cadastros {isCadastroOpen ? '▲' : '▼'}
+          </a>
+          {isCadastroOpen && (
+            <ul className={styles.subMenu}>
+              <li className={styles.subMenuItem}>
+                <Link to="/gerenciamento/proprietarios" className={styles.menuLink} onClick={handleLinkClick}>
+                  Gerenciar Proprietários
+                </Link>
+              </li>
+              <li className={styles.subMenuItem}>
+                <Link to="/gerenciamento/bairros" className={styles.menuLink} onClick={handleLinkClick}>
+                  Gerenciar Bairros
+                </Link>
+              </li>
+              <li className={styles.subMenuItem}>
+                <Link to="/gerenciamento/categorias" className={styles.menuLink} onClick={handleLinkClick}>
+                  Gerenciar Categorias
+                </Link>
+              </li>
+              <li className={styles.subMenuItem}>
+                <Link to="/gerenciamento/caracteristicas" className={styles.menuLink} onClick={handleLinkClick}>
+                  Gerenciar Características
+                </Link>
+              </li>
+            </ul>
+          )}
         </li>
 
         <li className={styles.menuItem}>
-          <Link to="/gerenciamento/relatorios" className={styles.menuLink}>Relatórios</Link>
+          <Link to="/gerenciamento/relatorios" className={styles.menuLink} onClick={handleLinkClick}>Relatórios</Link>
         </li>
 
         <li className={styles.menuItem}>
-          <Link to="/gerenciamento/movimentacao" className={styles.menuLink}>Movimentação</Link>
+          <Link to="/gerenciamento/movimentacao" className={styles.menuLink} onClick={handleLinkClick}>Movimentação</Link>
         </li>
 
         <li className={styles.menuItem}>
-          <Link to="/gerenciamento/pessoa" className={styles.menuLink}>Pessoa</Link>
+          <Link to="/gerenciamento/pessoa" className={styles.menuLink} onClick={handleLinkClick}>Pessoa</Link>
         </li>
       </ul>
     </nav>

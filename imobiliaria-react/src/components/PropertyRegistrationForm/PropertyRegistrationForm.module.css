@@ -408,4 +408,44 @@
     .checkboxOption {
         font-size: 0.75em;
     }
+
+    /* Adicione ao final de PropertyRegistrationForm.module.css */
+
+    .uploadSection {
+    padding: 1.5rem;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f9f9f9;
+    }
+
+    .fileInput {
+    width: 100%;
+    padding: 10px;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    }
+
+    .pageContainer {
+    padding: 2rem;
+    }
+
+    .relatedPropertiesSection {
+    margin-top: 2rem;
+    }
+
+    .relatedTable {
+    width: 100%;
+    border-collapse: collapse;
+    }
+
+    .relatedTable th,
+    .relatedTable td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+    }
+
 }

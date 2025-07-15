@@ -13,11 +13,53 @@
   transform: translateY(-5px);
 }
 
+.imageContainer {
+  position: relative; /* Essencial para posicionar as setas sobre a imagem */
+  cursor: pointer;
+}
+
 .image {
   width: 100%;
   height: 200px;
   object-fit: cover;
   display: block;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 20px;
+  z-index: 10;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  opacity: 0; /* As setas ficam invisíveis por padrão */
+}
+
+.imageContainer:hover .arrow {
+  opacity: 1;
+}
+
+.arrow:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
 }
 
 .info {
@@ -60,6 +102,81 @@
   line-height: 1.5;
   margin-top: auto; 
 }
+
+/* --- ESTILOS PARA O MODAL (IMAGEM EXPANDIDA) --- */
+
+.modalBackdrop {
+  position: fixed; /* Cobre a tela inteira */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalImage {
+  /* A imagem ocupa o máximo de espaço possível, mantendo a proporção */
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  cursor: default; /* Cursor padrão sobre a imagem, já que o fundo é clicável */
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: #fff;
+  font-size: 45px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  z-index: 1002;
+  line-height: 1;
+}
+
+.closeButton:hover {
+  color: #bbb;
+}
+
+.modalArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 16px;
+  font-size: 24px;
+  z-index: 1001;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.modalArrow.left {
+    left: 20px; /* Posição fixa da seta esquerda */
+}
+
+.modalArrow.right {
+    right: 20px; /* Posição fixa da seta direita */
+}
+
+.modalArrow:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 
 @media (max-width: 768px) {
   .card {

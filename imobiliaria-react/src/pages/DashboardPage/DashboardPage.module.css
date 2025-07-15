@@ -1,0 +1,93 @@
+.dashboardContainer {
+  padding: 2rem;
+}
+
+.dashboardTitle {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.kpiCard {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #007bff;
+}
+
+.cardIcon {
+  background-color: #e7f3ff;
+  color: #007bff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.cardLabel {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.quickLinksSection {
+  margin-top: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.quickLink {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 1.5rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.quickLink:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  color: #007bff;
+  border-color: #007bff;
+}

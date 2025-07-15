@@ -1,0 +1,104 @@
+.pageContainer {
+  padding: 2rem;
+  background-color: #f4f7f6;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.pageTitle {
+  margin: 0;
+  color: #333;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 3rem;
+}
+
+.tableContainer {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.proprietarioTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.proprietarioTable th,
+.proprietarioTable td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.proprietarioTable th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+}
+
+.proprietarioTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.proprietarioTable tbody tr:hover {
+  background-color: #f1f3f5;
+}
+
+.actionsCell {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+.addButton {
+  background-color: #28a745;
+  color: white;
+}
+.addButton:hover {
+  background-color: #218838;
+}
+
+.editButton {
+  background-color: #ffc107;
+  color: #212529;
+}
+.editButton:hover {
+  background-color: #e0a800;
+}
+
+.deleteButton {
+  background-color: #dc3545;
+  color: white;
+}
+.deleteButton:hover {
+  background-color: #c82333;
+}
+
+.noResults {
+    text-align: center;
+    padding: 2rem;
+    color: #6c757d;
+}

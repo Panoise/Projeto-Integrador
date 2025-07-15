@@ -7,18 +7,49 @@ import styles from './LoginPage.module.css';
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(''); // Estado para armazenar mensagens de erro
   const navigate = useNavigate();
 
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
+    setError(''); // Limpa erros anteriores
 
-    console.log('Tentativa de Login:', { email, password });
+    if (!email || !password) {
+      setError('Por favor, preencha o email e a senha.');
+      return;
+    }
 
-    // <--- CORREÇÃO AQUI: Mude para a rota correta do cadastro de imóvel
-    navigate('/gerenciamento/imovel'); // O caminho completo para o cadastro de imóvel
+    try {
+      // 1. Busca o usuário pelo email na API
+      const response = await fetch(`http://localhost:8080/api/usuarios/email/${email}`);
 
-    // Se você quiser que o botão de "Entrar" na tela de login leve para a Home do gerenciamento (o Dashboard):
-    // navigate('/gerenciamento');
+      // 2. Verifica se o usuário foi encontrado
+      if (!response.ok) {
+        if (response.status === 404) {
+          setError('Usuário não encontrado.');
+        } else {
+          setError('Ocorreu um erro no servidor. Tente novamente.');
+        }
+        return; // Para a execução se o usuário não foi encontrado
+      }
+
+      const usuario = await response.json();
+
+      // 3. Compara a senha digitada com a senha do banco
+      // Lembre-se: Em um sistema real, a senha seria criptografada.
+      // Aqui estamos comparando o texto puro, como está no seu banco agora.
+      if (usuario.senha === password) {
+        console.log('Login bem-sucedido!', usuario);
+        // Login sucesso! Redireciona para a página principal do sistema de gerenciamento.
+        navigate('/gerenciamento');
+      } else {
+        setError('Senha incorreta.');
+      }
+
+    } catch (err) {
+      console.error('Falha na requisição de login:', err);
+      setError('Não foi possível conectar ao servidor. Verifique sua conexão.');
+    }
   };
 
   return (
@@ -48,6 +79,10 @@ const LoginPage = () => {
               required
             />
           </div>
+          
+          {/* Exibe a mensagem de erro, se houver */}
+          {error && <p className={styles.errorMessage}>{error}</p>}
+          
           <button type="submit" className={styles.loginButton}>
             Entrar
           </button>
